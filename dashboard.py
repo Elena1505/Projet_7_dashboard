@@ -209,7 +209,7 @@ def main():
         valid_id = validator_id(id)
         if valid_id == 1:
             st.subheader("Creditworthiness prediction for the customer " + id + ":")
-            api_uri = 'http://127.0.0.1:5000/prediction'
+            api_uri = 'https://scoring-credit-app-e49e74730d55.herokuapp.com/prediction'
             index = id_to_index(id)
             pred, proba = request_prediction(api_uri, index)
             st.text("The score is : " + proba + ", so the customer is " + pred)
