@@ -209,7 +209,7 @@ def main():
         valid_id = validator_id(id)
         if valid_id == 1:
             st.subheader("Creditworthiness prediction for the customer " + id + ":")
-            api_uri = 'https://project-64w4ewqrqq-uc.a.run.app/prediction'
+            api_uri = 'https://credit-api-njlmpioyhq-uc.a.run.app//prediction'
             index = id_to_index(id)
             pred, proba = request_prediction(api_uri, index)
             st.text("The score is : " + proba + ", so the customer is " + pred)
