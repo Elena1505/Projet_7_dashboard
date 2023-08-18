@@ -219,7 +219,7 @@ def main():
 
         st.subheader("Feature importances for the customer " + id + ":")
         index = id_to_index(id)
-        feature_importances_customer(index)
+        #feature_importances_customer(index)
 
 
 if __name__ == '__main__':
