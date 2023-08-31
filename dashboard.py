@@ -32,7 +32,7 @@ def pie_chart():
 
 def feature_importances_customer(index):
     st.set_option('deprecation.showPyplotGlobalUse', False)
-    response = requests.post("http://172.20.10.8:5000/shap_plot", json={"value": index})
+    response = requests.post("https://credit-api-njlmpioyhq-ey.a.run.app/shap_plot", json={"value": index})
     data_shap = response.json()
     content_html = data_shap['key']
     st.components.v1.html(content_html)
@@ -206,7 +206,7 @@ def main():
         valid_id = validator_id(id)
         if valid_id == 1:
             st.subheader("Creditworthiness prediction for the customer " + id + ":")
-            api_uri = 'http://172.20.10.8:5000/prediction'
+            api_uri = 'https://credit-api-njlmpioyhq-ey.a.run.app/prediction'
             index = id_to_index(id)
             pred, proba = request_prediction(api_uri, index)
             st.text("The score is : " + proba + ", so the customer is " + pred)
